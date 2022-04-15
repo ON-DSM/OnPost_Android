@@ -1,4 +1,4 @@
-package com.yongjincompany.data.remote.request
+package com.yongjincompany.data.remote.request.auth
 
 data class RegisterRequest(
     val email: String,
