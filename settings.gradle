@@ -6,7 +6,5 @@ dependencyResolutionManagement {
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
-rootProject.name = "post"
-include ':presentation'
-include ':data'
-include ':domain'
+rootProject.name = "popo"
+include ':app'
