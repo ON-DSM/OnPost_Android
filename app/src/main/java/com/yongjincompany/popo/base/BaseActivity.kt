@@ -15,10 +15,10 @@ abstract class BaseActivity<T : ViewDataBinding>(@LayoutRes private val layoutRe
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, layoutResId)
-        init()
+        initView()
     }
 
-    abstract fun init()
+    abstract fun initView()
 
     override fun onBackPressed() {
         if (System.currentTimeMillis() - waitTime >= 1500) {
