@@ -1,4 +1,4 @@
-package com.yongjincompany.popo.remote.response
+package com.company.data.remote.response
 
 data class SortPostResponse(
     val PostList: ArrayList<SortPostResponseItem>
@@ -15,7 +15,7 @@ data class SortPostResponse(
         val profileImage: String,
         val createAt: String,
 
-    )
+        )
 
     data class Writer(
         val profile: String,
