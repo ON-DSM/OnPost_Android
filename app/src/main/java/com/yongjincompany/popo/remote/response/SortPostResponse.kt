@@ -4,26 +4,23 @@ data class SortPostResponse(
     val PostList: ArrayList<SortPostResponseItem>
 ) {
     data class SortPostResponseItem(
-        val comments: Int,
-        val context: String,
-        val createAt: String,
         val id: Int,
-        val image: Image,
-        val like: Int,
+        val content: String,
         val title: String,
-        val writer: Writer
-    )
+        val introduce: String,
+        val writer: Writer,
+        val like: Int,
+        val comments: Int,
+        val tags: List<String>,
+        val profileImage: String,
+        val createAt: String,
 
-    data class Image(
-        val id: Int,
-        val imagePath: String
     )
 
     data class Writer(
+        val profile: String,
         val email: String,
-        val id: Int,
-        val image: Any, // null
-        val introduce: Any, //null
-        val name: String
+        val name: String,
+        val introduce: String
     )
 }
