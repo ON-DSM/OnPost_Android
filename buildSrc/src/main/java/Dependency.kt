@@ -73,11 +73,6 @@ object Dependency {
         const val runTime = "androidx.lifecycle:lifecycle-runtime-ktx:${Version.lifecycle}"
     }
 
-    object GooglePlayService {
-        const val fitness = "com.google.android.gms:play-services-fitness:${Version.googleFit}"
-        const val auth = "com.google.android.gms:play-services-auth:${Version.googleAuth}"
-    }
-
     object ThreeTenAndroidBackport {
         const val threeTenAbp = "com.jakewharton.threetenabp:threetenabp:${Version.threeTenAbp}"
     }
@@ -99,11 +94,6 @@ object Dependency {
         const val hiltExtension = "androidx.hilt:hilt-work:${Version.workManagerHiltExtension}"
     }
 
-    object FireBase {
-        const val fcm = "com.google.firebase:firebase-analytics-ktx:${Version.fcm}"
-        const val message = "com.google.firebase:firebase-messaging:${Version.message}"
-    }
-
     object Permission {
         const val tedPermission =
             "io.github.ParkSangGwon:tedpermission-normal:${Version.tedPermission}"
@@ -116,5 +106,9 @@ object Dependency {
     object Glide {
         const val glideCore = "com.github.bumptech.glide:glide:${Version.glide}"
         const val glideCompiler = "com.github.bumptech.glide:compiler:${Version.glide}"
+    }
+
+    object Splash {
+        const val splash = "androidx.core:core-splashscreen:${Version.splash}"
     }
 }

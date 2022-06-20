@@ -17,8 +17,6 @@ object Version {
     const val lifecycle = "2.4.0"
     const val androidKtx = "1.4.0"
     const val fragmentKtx = "1.4.0"
-    const val googleFit = "21.0.1"
-    const val googleAuth = "20.0.1"
     const val threeTenAbp = "1.3.1"
     const val moshi = "1.12.0"
     const val navigation = "2.3.5"
@@ -38,4 +36,5 @@ object Version {
     const val moshiKotlin = "1.8.0"
     const val circleImage = "3.1.0"
     const val glide = "4.13.0"
+    const val splash = "1.0.0-beta02"
 }

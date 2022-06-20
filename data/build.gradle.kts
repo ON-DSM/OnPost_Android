@@ -16,7 +16,8 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro")
         }
     }
     compileOptions {
@@ -52,9 +53,6 @@ dependencies {
 
     implementation(Dependency.DI.inject)
 
-    implementation(Dependency.GooglePlayService.fitness)
-    implementation(Dependency.GooglePlayService.auth)
-
     implementation(Dependency.DI.hiltAndroid)
     kapt(Dependency.DI.hiltCompiler)
 
@@ -64,6 +62,4 @@ dependencies {
     implementation(Dependency.WorkManager.hiltExtension)
 
     implementation(Dependency.LocalStorage.sharedPreference)
-
-    implementation(Dependency.FireBase.message)
 }

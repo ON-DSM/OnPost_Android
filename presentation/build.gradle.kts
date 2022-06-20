@@ -1,3 +1,5 @@
+import Dependency.GradlePlugin.android
+
 plugins {
     id("com.android.application")
     id("dagger.hilt.android.plugin")
@@ -95,12 +97,6 @@ dependencies {
     implementation(Dependency.WorkManager.ktx)
     implementation(Dependency.WorkManager.hiltExtension)
 
-    implementation(Dependency.FireBase.fcm)
-    implementation(Dependency.FireBase.message)
-
-    implementation(Dependency.GooglePlayService.fitness)
-    implementation(Dependency.GooglePlayService.auth)
-
     implementation(Dependency.Permission.tedPermission)
 
     implementation(Dependency.ThreeTenAndroidBackport.threeTenAbp)
@@ -109,4 +105,6 @@ dependencies {
 
     implementation(Dependency.Glide.glideCore)
     annotationProcessor(Dependency.Glide.glideCompiler)
+
+    implementation(Dependency.Splash.splash)
 }
