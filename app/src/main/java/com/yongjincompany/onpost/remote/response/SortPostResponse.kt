@@ -1,4 +1,4 @@
-package com.yongjincompany.onpost.response
+package com.yongjincompany.onpost.remote.response
 
 data class SortPostResponse(
     val id: Int,
