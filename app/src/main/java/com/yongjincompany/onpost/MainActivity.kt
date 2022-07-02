@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         setupRecylerview()
 
+
         val repository = PostRepository()
         val viewModelFactory = PostViewModelFactory(repository)
         vm = ViewModelProvider(this, viewModelFactory).get(PostViewModel::class.java)
@@ -53,7 +54,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        binding.popularity.setOnClickListener {
+        binding.btnPopularity.setOnClickListener {
             vm.getPost(sort = "LIKE", page = 1)
             vm.modo.observe(this, Observer { response ->
                 if (response.isSuccessful) {
@@ -62,10 +63,11 @@ class MainActivity : AppCompatActivity() {
                             myAdapter.setData(it)
                         }
                     }
-                } else {
+                }
+                else {
                     Log.d("error", response.errorBody().toString())
                     Toast.makeText(applicationContext,
-                        response.errorBody().toString(),
+                        "리스트를 불러오지 못했습니다",
                         Toast.LENGTH_SHORT).show()
                 }
             })
@@ -73,7 +75,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        binding.latest.setOnClickListener {
+        binding.btnLatest.setOnClickListener {
             vm.getPost(sort = "NEW", page = 1)
             vm.modo.observe(this, Observer { response ->
                 if (response.isSuccessful) {
@@ -81,35 +83,32 @@ class MainActivity : AppCompatActivity() {
                         myAdapter.setData(it)
                     }
                 } else {
-
+                    Toast.makeText(applicationContext,
+                        "리스트를 불러오지 못했습니다",
+                        Toast.LENGTH_SHORT).show()
                 }
             })
         }
-    }
 
-    override fun onResume() {
-        super.onResume()
-        initview()
+        binding.btnComment.setOnClickListener {
+            vm.getPost(sort = "COMMENTS", page = 1)
+            vm.modo.observe(this, Observer { response ->
+                if (response.isSuccessful) {
+                    response.body()!!.let {
+                        myAdapter.setData(it)
+                    }
+                } else {
+                    Toast.makeText(applicationContext,
+                        "리스트를 불러오지 못했습니다",
+                        Toast.LENGTH_SHORT).show()
+                }
+            })
+        }
     }
 
     private fun setupRecylerview() {
         val recylerView = binding.postList
         recylerView.adapter = myAdapter
         recylerView.layoutManager = LinearLayoutManager(this)
-    }
-
-    private fun initview() {
-        binding.popularity.setOnClickListener {
-            binding.popularity.setTextColor(Color.parseColor("#303f9f"))
-            binding.popularity.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 22F)
-            binding.latest.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18F)
-            binding.latest.setTextColor(Color.parseColor("#A3A3A3"))
-        }
-        binding.latest.setOnClickListener {
-            binding.latest.setTextColor(Color.parseColor("#303f9f"))
-            binding.latest.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 22F)
-            binding.popularity.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18F)
-            binding.popularity.setTextColor(Color.parseColor("#A3A3A3"))
-        }
     }
 }
