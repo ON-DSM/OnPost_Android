@@ -18,6 +18,9 @@
             android:name=".ui.PostDetailActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.SearchPostActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
