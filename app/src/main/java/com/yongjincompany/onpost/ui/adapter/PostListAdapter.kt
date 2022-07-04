@@ -2,6 +2,7 @@ package com.yongjincompany.onpost.ui.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,15 +12,17 @@ import com.bumptech.glide.Glide
 import com.yongjincompany.onpost.R
 import com.yongjincompany.onpost.databinding.ItemPostBinding
 import com.yongjincompany.onpost.remote.response.SortPostResponse
+import com.yongjincompany.onpost.ui.PostDetailActivity
 import kotlin.coroutines.coroutineContext
+import kotlin.properties.Delegates
 
-class PostListAdapter :
-    RecyclerView.Adapter<PostListAdapter.PostDataViewHolder>() {
+class PostListAdapter : RecyclerView.Adapter<PostListAdapter.PostDataViewHolder>() {
     inner class PostDataViewHolder(val itemPostBinding: ItemPostBinding) :
         RecyclerView.ViewHolder(itemPostBinding.root)
 
-    private lateinit var context:Context
+    private lateinit var context: Context
     private var myList = emptyList<SortPostResponse>()
+    private var postId by Delegates.notNull<Int>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = PostDataViewHolder(
         DataBindingUtil.inflate(
@@ -40,13 +43,20 @@ class PostListAdapter :
         holder.itemPostBinding.date.text = myList[position].createAt
         holder.itemPostBinding.tag.text = myList[position].tags
         Glide.with(context).load(myList[position].profileImage).into(holder.itemPostBinding.ivPost)
-        Glide.with(context).load(myList[position].writer.profile).into(holder.itemPostBinding.userProfileImage)
+        Glide.with(context).load(myList[position].writer.profile)
+            .into(holder.itemPostBinding.userProfileImage)
+        holder.itemView.setOnClickListener {
+            postId = myList[position].id
+            val intent = Intent(context, PostDetailActivity::class.java)
+
+            intent.putExtra("postid", postId)
+            context.startActivity(intent)
+        }
     }
 
     @SuppressLint("NotifyDataSetChanged")
     fun setData(newList: List<SortPostResponse>) {
         myList = newList
         notifyDataSetChanged()
-
     }
 }
