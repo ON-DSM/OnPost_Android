@@ -6,6 +6,7 @@ data class TopThreePostResponse(
     val id: Int,
     val introduce: String,
     val like: Int,
+    val rank: Int,
     val profileImage: String,
     val tags: String,
     val title: String,
