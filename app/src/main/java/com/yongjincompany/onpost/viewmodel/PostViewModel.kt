@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.yongjincompany.onpost.remote.response.ReadPostResponse
+import com.yongjincompany.onpost.remote.response.SearchPostResponse
 import com.yongjincompany.onpost.remote.response.SortPostResponse
 import com.yongjincompany.onpost.remote.response.TopThreePostResponse
 import com.yongjincompany.onpost.repository.PostRepository
@@ -14,6 +15,7 @@ class PostViewModel(private val postRepository: PostRepository) : ViewModel() {
     var sortPostLiveData: MutableLiveData<Response<List<SortPostResponse>>> = MutableLiveData()
     var topThreePostLiveData: MutableLiveData<Response<List<TopThreePostResponse>>> = MutableLiveData()
     var showPostLiveData: MutableLiveData<Response<ReadPostResponse>> = MutableLiveData()
+    var searchPostLiveData: MutableLiveData<Response<List<SearchPostResponse>>> = MutableLiveData()
 
     fun getPost(sort: String, page: Int) {
         viewModelScope.launch {
@@ -33,6 +35,13 @@ class PostViewModel(private val postRepository: PostRepository) : ViewModel() {
         viewModelScope.launch {
             val response = postRepository.getShowPost(id)
             showPostLiveData.value = response
+        }
+    }
+
+    fun getSearchPost(param: String) {
+        viewModelScope.launch {
+            val response = postRepository.getSearchPost(param)
+            searchPostLiveData.value = response
         }
     }
 }
