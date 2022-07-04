@@ -1,6 +1,7 @@
 package com.yongjincompany.onpost.remote.api
 
 import com.yongjincompany.onpost.remote.response.ReadPostResponse
+import com.yongjincompany.onpost.remote.response.SearchPostResponse
 import com.yongjincompany.onpost.remote.response.SortPostResponse
 import com.yongjincompany.onpost.remote.response.TopThreePostResponse
 import retrofit2.Response
@@ -23,4 +24,9 @@ interface PostApi {
     suspend fun fetchShowPost(
         @Query("id") id: Int
     ): Response<ReadPostResponse>
+
+    @GET("post/search")
+    suspend fun fetchSearchPost(
+        @Query("param") param: String
+    ): Response<List<SearchPostResponse>>
 }
