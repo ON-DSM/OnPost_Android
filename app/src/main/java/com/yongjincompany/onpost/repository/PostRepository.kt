@@ -2,6 +2,7 @@ package com.yongjincompany.onpost.repository
 
 import com.yongjincompany.onpost.remote.RetrofitBuilder
 import com.yongjincompany.onpost.remote.response.ReadPostResponse
+import com.yongjincompany.onpost.remote.response.SearchPostResponse
 import com.yongjincompany.onpost.remote.response.SortPostResponse
 import com.yongjincompany.onpost.remote.response.TopThreePostResponse
 import retrofit2.Response
@@ -15,5 +16,8 @@ class PostRepository {
     }
     suspend fun getShowPost(id: Int): Response<ReadPostResponse> {
         return RetrofitBuilder.postApi.fetchShowPost(id)
+    }
+    suspend fun getSearchPost(param: String): Response<List<SearchPostResponse>> {
+        return RetrofitBuilder.postApi.fetchSearchPost(param)
     }
 }
