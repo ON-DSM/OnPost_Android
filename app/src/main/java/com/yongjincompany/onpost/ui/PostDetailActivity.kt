@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.yongjincompany.onpost.databinding.ActivityMainBinding
@@ -19,6 +20,7 @@ class PostDetailActivity : AppCompatActivity() {
     var data: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
         super.onCreate(savedInstanceState)
         binding = ActivityPostDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -43,9 +45,8 @@ class PostDetailActivity : AppCompatActivity() {
                     }
                 }
             } else {
-                Log.d("error", response.errorBody().toString())
                 Toast.makeText(applicationContext,
-                    response.errorBody().toString(),
+                    "정보를 불러올 수 없습니다.",
                     Toast.LENGTH_SHORT).show()
             }
         })
