@@ -29,7 +29,7 @@
             app:layout_constraintStart_toEndOf="@+id/searchBtn"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatImageButton
+        <ImageView
             android:id="@+id/searchBtn"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -102,6 +102,7 @@
         android:id="@+id/searchPostList"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
