@@ -1,4 +1,4 @@
-package com.yongjincompany.onpost.remote.response
+package com.yongjincompany.onpost.remote.response.post
 
 data class ReadPostResponse(
     val comments: List<Comment>,

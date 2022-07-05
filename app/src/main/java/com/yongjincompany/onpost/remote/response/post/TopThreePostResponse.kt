@@ -1,11 +1,12 @@
-package com.yongjincompany.onpost.remote.response
+package com.yongjincompany.onpost.remote.response.post
 
-data class SearchPostResponse(
+data class TopThreePostResponse(
     val comments: Int,
     val createAt: String,
     val id: Int,
     val introduce: String,
     val like: Int,
+    val rank: Int,
     val profileImage: String,
     val tags: String,
     val title: String,
