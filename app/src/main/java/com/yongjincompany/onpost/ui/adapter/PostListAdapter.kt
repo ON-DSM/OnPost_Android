@@ -33,7 +33,7 @@ class PostListAdapter : RecyclerView.Adapter<PostListAdapter.PostDataViewHolder>
         )
     )
 
-    override fun getItemCount(): Int = myList.size
+    override fun getItemCount() = myList.size
 
     override fun onBindViewHolder(holder: PostDataViewHolder, position: Int) {
         context = holder.itemPostBinding.userProfileImage.context
