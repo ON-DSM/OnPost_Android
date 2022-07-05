@@ -1,4 +1,4 @@
-package com.yongjincompany.onpost.ui
+package com.yongjincompany.onpost.ui.post
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -8,9 +8,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yongjincompany.onpost.databinding.ActivitySearchPostBinding
 import com.yongjincompany.onpost.repository.PostRepository
-import com.yongjincompany.onpost.ui.adapter.SearchPostListAdapter
-import com.yongjincompany.onpost.viewmodel.PostViewModel
-import com.yongjincompany.onpost.viewmodel.PostViewModelFactory
+import com.yongjincompany.onpost.ui.post.adapter.SearchPostListAdapter
+import com.yongjincompany.onpost.viewmodel.post.PostViewModel
+import com.yongjincompany.onpost.viewmodel.post.PostViewModelFactory
 
 
 class SearchPostActivity : AppCompatActivity() {

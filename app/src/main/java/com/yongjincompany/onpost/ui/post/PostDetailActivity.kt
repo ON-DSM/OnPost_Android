@@ -1,17 +1,15 @@
-package com.yongjincompany.onpost.ui
+package com.yongjincompany.onpost.ui.post
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.yongjincompany.onpost.databinding.ActivityMainBinding
 import com.yongjincompany.onpost.databinding.ActivityPostDetailBinding
 import com.yongjincompany.onpost.repository.PostRepository
-import com.yongjincompany.onpost.viewmodel.PostViewModel
-import com.yongjincompany.onpost.viewmodel.PostViewModelFactory
+import com.yongjincompany.onpost.viewmodel.post.PostViewModel
+import com.yongjincompany.onpost.viewmodel.post.PostViewModelFactory
 
 class PostDetailActivity : AppCompatActivity() {
 

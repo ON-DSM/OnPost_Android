@@ -1,10 +1,10 @@
 package com.yongjincompany.onpost.repository
 
 import com.yongjincompany.onpost.remote.RetrofitBuilder
-import com.yongjincompany.onpost.remote.response.ReadPostResponse
-import com.yongjincompany.onpost.remote.response.SearchPostResponse
-import com.yongjincompany.onpost.remote.response.SortPostResponse
-import com.yongjincompany.onpost.remote.response.TopThreePostResponse
+import com.yongjincompany.onpost.remote.response.post.ReadPostResponse
+import com.yongjincompany.onpost.remote.response.post.SearchPostResponse
+import com.yongjincompany.onpost.remote.response.post.SortPostResponse
+import com.yongjincompany.onpost.remote.response.post.TopThreePostResponse
 import retrofit2.Response
 
 class PostRepository {

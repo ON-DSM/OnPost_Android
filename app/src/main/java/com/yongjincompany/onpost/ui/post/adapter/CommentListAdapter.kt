@@ -1,21 +1,17 @@
-package com.yongjincompany.onpost.ui.adapter
+package com.yongjincompany.onpost.ui.post.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.yongjincompany.onpost.R
 import com.yongjincompany.onpost.databinding.ItemCommentBinding
-import com.yongjincompany.onpost.databinding.ItemPostBinding
-import com.yongjincompany.onpost.remote.response.ReadPostResponse
-import com.yongjincompany.onpost.ui.PostDetailActivity
-import com.yongjincompany.onpost.ui.UserInfoActivity
-import kotlin.coroutines.coroutineContext
+import com.yongjincompany.onpost.remote.response.post.ReadPostResponse
+import com.yongjincompany.onpost.ui.member.UserInfoActivity
 import kotlin.properties.Delegates
 
 class CommentListAdapter : RecyclerView.Adapter<CommentListAdapter.CommentDataViewHolder>() {

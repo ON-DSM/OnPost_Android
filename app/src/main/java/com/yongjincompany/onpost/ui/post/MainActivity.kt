@@ -1,4 +1,4 @@
-package com.yongjincompany.onpost.ui
+package com.yongjincompany.onpost.ui.post
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -11,9 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.yongjincompany.onpost.databinding.ActivityMainBinding
 import com.yongjincompany.onpost.repository.PostRepository
-import com.yongjincompany.onpost.ui.adapter.PostListAdapter
-import com.yongjincompany.onpost.viewmodel.PostViewModel
-import com.yongjincompany.onpost.viewmodel.PostViewModelFactory
+import com.yongjincompany.onpost.ui.post.adapter.PostListAdapter
+import com.yongjincompany.onpost.viewmodel.post.PostViewModel
+import com.yongjincompany.onpost.viewmodel.post.PostViewModelFactory
 
 class MainActivity : AppCompatActivity() {
 

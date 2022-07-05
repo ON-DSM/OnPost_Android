@@ -1,28 +1,30 @@
-package com.yongjincompany.onpost.ui.adapter
+package com.yongjincompany.onpost.ui.post.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.yongjincompany.onpost.R
 import com.yongjincompany.onpost.databinding.ItemPostBinding
-import com.yongjincompany.onpost.remote.response.SearchPostResponse
+import com.yongjincompany.onpost.remote.response.SortPostResponse
 import com.yongjincompany.onpost.ui.PostDetailActivity
+import kotlin.coroutines.coroutineContext
 import kotlin.properties.Delegates
 
-class SearchPostListAdapter : RecyclerView.Adapter<SearchPostListAdapter.SearchPostDataViewHolder>() {
-    inner class SearchPostDataViewHolder(val itemPostBinding: ItemPostBinding) :
+class PostListAdapter : RecyclerView.Adapter<PostListAdapter.PostDataViewHolder>() {
+    inner class PostDataViewHolder(val itemPostBinding: ItemPostBinding) :
         RecyclerView.ViewHolder(itemPostBinding.root)
 
     private lateinit var context: Context
-    private var myList = emptyList<SearchPostResponse>()
+    private var myList = emptyList<SortPostResponse>()
     private var postId by Delegates.notNull<Int>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = SearchPostDataViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = PostDataViewHolder(
         DataBindingUtil.inflate(
             LayoutInflater.from(parent.context),
             R.layout.item_post,
@@ -31,9 +33,9 @@ class SearchPostListAdapter : RecyclerView.Adapter<SearchPostListAdapter.SearchP
         )
     )
 
-    override fun getItemCount(): Int = myList.size
+    override fun getItemCount() = myList.size
 
-    override fun onBindViewHolder(holder: SearchPostDataViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: PostDataViewHolder, position: Int) {
         context = holder.itemPostBinding.userProfileImage.context
         holder.itemPostBinding.title.text = myList[position].title
         holder.itemPostBinding.name.text = myList[position].writer.name
@@ -53,7 +55,7 @@ class SearchPostListAdapter : RecyclerView.Adapter<SearchPostListAdapter.SearchP
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setData(newList: List<SearchPostResponse>) {
+    fun setData(newList: List<SortPostResponse>) {
         myList = newList
         notifyDataSetChanged()
     }

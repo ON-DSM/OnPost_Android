@@ -1,12 +1,12 @@
-package com.yongjincompany.onpost.viewmodel
+package com.yongjincompany.onpost.viewmodel.post
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.yongjincompany.onpost.remote.response.ReadPostResponse
-import com.yongjincompany.onpost.remote.response.SearchPostResponse
-import com.yongjincompany.onpost.remote.response.SortPostResponse
-import com.yongjincompany.onpost.remote.response.TopThreePostResponse
+import com.yongjincompany.onpost.remote.response.post.ReadPostResponse
+import com.yongjincompany.onpost.remote.response.post.SearchPostResponse
+import com.yongjincompany.onpost.remote.response.post.SortPostResponse
+import com.yongjincompany.onpost.remote.response.post.TopThreePostResponse
 import com.yongjincompany.onpost.repository.PostRepository
 import kotlinx.coroutines.launch
 import retrofit2.Response

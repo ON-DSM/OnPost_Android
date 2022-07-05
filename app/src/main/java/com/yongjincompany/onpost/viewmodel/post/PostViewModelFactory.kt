@@ -1,4 +1,4 @@
-package com.yongjincompany.onpost.viewmodel
+package com.yongjincompany.onpost.viewmodel.post
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
