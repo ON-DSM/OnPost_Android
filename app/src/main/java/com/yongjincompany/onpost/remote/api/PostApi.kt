@@ -1,9 +1,9 @@
 package com.yongjincompany.onpost.remote.api
 
-import com.yongjincompany.onpost.remote.response.ReadPostResponse
-import com.yongjincompany.onpost.remote.response.SearchPostResponse
-import com.yongjincompany.onpost.remote.response.SortPostResponse
-import com.yongjincompany.onpost.remote.response.TopThreePostResponse
+import com.yongjincompany.onpost.remote.response.post.ReadPostResponse
+import com.yongjincompany.onpost.remote.response.post.SearchPostResponse
+import com.yongjincompany.onpost.remote.response.post.SortPostResponse
+import com.yongjincompany.onpost.remote.response.post.TopThreePostResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
