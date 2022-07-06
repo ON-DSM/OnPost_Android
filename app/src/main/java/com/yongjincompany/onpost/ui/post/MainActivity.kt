@@ -8,6 +8,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.SimpleItemAnimator
 import com.bumptech.glide.Glide
 import com.yongjincompany.onpost.databinding.ActivityMainBinding
 import com.yongjincompany.onpost.repository.PostRepository
@@ -38,6 +39,10 @@ class MainActivity : AppCompatActivity() {
 
         fetchLike()
 
+        val animator = binding.postList.itemAnimator
+        if (animator is SimpleItemAnimator) {
+            animator.supportsChangeAnimations = false
+        }
         binding.btnPopularity.setOnClickListener {
             fetchLike()
         }
