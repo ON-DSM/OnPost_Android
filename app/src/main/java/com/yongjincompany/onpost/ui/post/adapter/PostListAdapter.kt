@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.yongjincompany.onpost.R
 import com.yongjincompany.onpost.databinding.ItemPostBinding
-import com.yongjincompany.onpost.remote.response.SortPostResponse
-import com.yongjincompany.onpost.ui.PostDetailActivity
+import com.yongjincompany.onpost.remote.response.post.SortPostResponse
+import com.yongjincompany.onpost.ui.post.PostDetailActivity
 import kotlin.coroutines.coroutineContext
 import kotlin.properties.Delegates
 
