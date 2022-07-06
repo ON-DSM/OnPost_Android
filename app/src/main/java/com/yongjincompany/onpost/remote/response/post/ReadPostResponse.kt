@@ -4,7 +4,6 @@ data class ReadPostResponse(
     val comments: List<Comment>,
     val content: String,
     val createAt: String,
-    val doLike: Boolean,
     val id: Int,
     val images: List<String>,
     val introduce: String,
@@ -16,9 +15,7 @@ data class ReadPostResponse(
 ) {
     data class Comment(
         val content: String,
-        val createAt: String,
         val id: Int,
-        val moreComment: Int,
         val writer: Writer,
     )
 

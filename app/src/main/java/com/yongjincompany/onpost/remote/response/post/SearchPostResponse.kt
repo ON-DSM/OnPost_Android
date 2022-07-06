@@ -1,7 +1,6 @@
 package com.yongjincompany.onpost.remote.response.post
 
 data class SearchPostResponse(
-    val comments: Int,
     val createAt: String,
     val id: Int,
     val introduce: String,
@@ -12,8 +11,6 @@ data class SearchPostResponse(
     val writer: Writer
 ) {
     data class Writer(
-        val email: String,
-        val introduce: String,
         val name: String,
         val profile: String
     )
