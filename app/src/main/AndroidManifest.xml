@@ -15,13 +15,16 @@
         android:theme="@style/Theme.Onpost.Splash"
         tools:targetApi="n">
         <activity
-            android:name=".ui.PostDetailActivity"
+            android:name=".ui.member.UserInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.SearchPostActivity"
+            android:name=".ui.post.PostDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.post.SearchPostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.post.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
