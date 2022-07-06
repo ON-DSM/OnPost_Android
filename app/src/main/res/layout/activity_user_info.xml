@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EAEAEA"
     tools:context=".ui.member.UserInfoActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,13 +23,23 @@
             android:fontFamily="@font/suncheonb"
             android:gravity="center"
             android:text="유저 정보"
-            android:textColor="@color/main_color"
+            android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/line"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/up" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
@@ -124,8 +135,9 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="20dp"
                 android:ellipsize="end"
+                android:gravity="center"
                 android:fontFamily="@font/suncheonr"
                 android:text="저는 세계최강 안드로이드 개발자 이용진입니다!"
                 android:textSize="15sp"
@@ -141,6 +153,8 @@
         android:id="@+id/my_picture"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="1dp"
         android:layout_marginTop="80dp"
         android:layout_marginBottom="456dp"
         android:src="@drawable/ic_launcher_background"
