@@ -20,7 +20,7 @@ class CommentListAdapter : RecyclerView.Adapter<CommentListAdapter.CommentDataVi
 
     private lateinit var context: Context
     private var myList = emptyList<ReadPostResponse.Comment>()
-    private var email by Delegates.notNull<String>()
+    private lateinit var email : String
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = CommentDataViewHolder(
